@@ -33,14 +33,22 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+
+// const firstIndex = colorPalette[0];
+const chosenColor = colorPalette[1];
+const currentBrushColor = paintBrush[1];
+const currentCanvasColor = canvasColor[1];
+
+
 //Canvas square query
 const canvasColor = document.querySelector('.canvas')
 
 //Palette colors query
-const colorPalette = document.querySelector('.palette')
+const colorPalette = document.querySelectorAll('div');
 
 //Brush query
 const paintBrush = document.querySelector('.brush')
+
 
 
 
@@ -54,21 +62,20 @@ const paintBrush = document.querySelector('.brush')
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
-//Clicking square function
-const clickSquare = function (){
-  for (const square of canvasSquares){
-//if statement- if I click on square, then change canvas color
+//Clicking Canvas function
+const clickCanvas = function (){
+ // click on square, then change canvas color. 
+canvasColor.replace(currentCanvasColor, chosenColor)
+
   }
-}
-canvasColor.addEventListener('click', func)
 
 //Clicking palette color function
-const paletteColor = function (){
-  for (square of paletteSquares){
-//if statement - if I click on specific color, then brush color changes
+const changePaletteColor = function (){
+//Click on specific color, then brush color changes
+ paintBrush.replace(currentBrushColor, chosenColor)
+ 
   }
-}
-colorPalette.addEventListener('click', func)
+
 
 /**************************
  * WIRING IT ALL TOGETHER *
@@ -78,3 +85,7 @@ colorPalette.addEventListener('click', func)
 // You'll need to add the appropriate event listener for each
 // square and for each palette color from the functions you
 // wrote above.
+
+canvasColor.addEventListener('click', clickCanvas)
+
+colorPalette.addEventListener('click', changePaletteColor)
