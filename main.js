@@ -33,6 +33,15 @@ while (count <= gridWidth * gridWidth) {
 // Add queries for all your squares, palette colors, and brush here.
 // (Note the singular or plural used in that sentence!)
 
+//Canvas square query
+const canvasColor = document.querySelector('.canvas')
+
+//Palette colors query
+const colorPalette = document.querySelector('.palette')
+
+//Brush query
+const paintBrush = document.querySelector('.brush')
+
 
 
 /****************************
@@ -45,7 +54,21 @@ while (count <= gridWidth * gridWidth) {
 // run as event listeners (after the next step is set up) isn't a
 // bad idea for testing purposes.
 
+//Clicking square function
+const clickSquare = function (){
+  for (const square of canvasSquares){
+//if statement- if I click on square, then change canvas color
+  }
+}
+canvasColor.addEventListener('click', func)
 
+//Clicking palette color function
+const paletteColor = function (){
+  for (square of paletteSquares){
+//if statement - if I click on specific color, then brush color changes
+  }
+}
+colorPalette.addEventListener('click', func)
 
 /**************************
  * WIRING IT ALL TOGETHER *
